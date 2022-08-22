@@ -18,22 +18,24 @@ public class AddressBookMain {
 		
 		do {
 			System.out.println("***ADDRESSBOOK SIMULATION***");
-			System.out.println("\n1. ADD CONTACT \n2. DISPLAY CONTACT ");
+			System.out.println("\n1. ADD CONTACT \n2. DISPLAY CONTACT \n3.EDIT CONTACT ");
 			System.out.println("Enter the Operation Number: ");
 			operationNo = sc.nextInt();
 			
 			switch (operationNo) {
 			case 1:
-				addressBook.addContact();
+				addressBook.addContact(); 
 				break;
 			case 2:
 				addressBook.displayContact();
+			
 			default:
 				System.out.println("Invalid entry");
 				break;
 			}
 		} while (operationNo != 3);
-    sc.close(); //closing the Scanner
+
+        sc.close();
 	}
 	
 }

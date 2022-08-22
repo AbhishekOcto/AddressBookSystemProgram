@@ -10,7 +10,7 @@ public void addContact() {   //method for adding contact from user input
 	System.out.println("Enter the number of contacts you want to save: ");
 	int noOfContacts = sc.nextInt();
 	for( int i = 0; i < noOfContacts; i++ ) {
-		Contacts contact = new Contacts();
+		Contacts contact = new Contacts(); // local object of class Contacts 
 		System.out.println("Enter the contact details: ");
 		System.out.println("Enter the First Name: ");
 		contact.setFirstName(sc.next());
@@ -31,8 +31,12 @@ public void addContact() {   //method for adding contact from user input
 		contactList.add(contact);  //adding the contact input to the ArrayList
 	}
  }
-public void displayContact() { //method for displaying all entries in the ArrayList
-	System.out.println(contactList);
-}
+public void displayContact() { //method for displaying all entries in the ArrayList	
+	for ( int i = 0; i < contactList.size(); i++ ) {
+		Contacts contact = contactList.get(i);
+		System.out.println(contact.toString());
+	}
+	
+ }
 
 }
