@@ -19,12 +19,13 @@ public class AddressBookMain {
 		do {
 			System.out.println("***ADDRESSBOOK SIMULATION***");
 			System.out.println("\n1. ADD CONTACT \n2. DISPLAY CONTACT \n3. EDIT CONTACT \n4. EXIT ");
+
 			System.out.println("Enter the Operation Number: ");
 			operationNo = sc.nextInt();
 			
 			switch (operationNo) {
 			case 1:
-				addressBook.addContact();
+				addressBook.addContact(); 
 				break;
 			case 2:
 				addressBook.displayContact();
@@ -36,9 +37,10 @@ public class AddressBookMain {
 				System.out.println("Invalid entry");
 				break;
 			}
+      
 		} 
 		    while (operationNo != 4);
-            sc.close(); //closing the Scanner
+        sc.close();
 	}
 	
 }
