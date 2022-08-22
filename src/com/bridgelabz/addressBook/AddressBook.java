@@ -88,6 +88,17 @@ public void editContact() {
 	    }
 }
 
+public void deleteContact() {
+	System.out.println("Enter the first name of contact to be deleted: ");
+	String name = sc.next();
+	for ( int i = 0; i < contactList.size(); i++ ) {
+		Contacts contact = contactList.get(i);
+		if (contact.getFirstName().equals(name)) {
+			contactList.remove(i);
+			System.out.println("Contact Deleted");
+		}
+	}
+}
 
 public void displayContact() { //method for displaying all entries in the ArrayList	
 
