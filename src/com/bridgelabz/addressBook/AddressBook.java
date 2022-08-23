@@ -8,6 +8,7 @@ public class AddressBook {
 	
 	public void addContact() {   //method for adding contact from user input
 		Contacts contact = new Contacts();
+		System.out.println("Hash Code of the contact object: "+contact.hashCode());
 		System.out.println("Enter the First Name : ");
 		contact.setFirstName(sc.next());
 		System.out.println("Enter the Last Name : ");
@@ -35,22 +36,47 @@ public class AddressBook {
 		for(Contacts contact : contactList) {
 			if(contact.getFirstName().equals(firstName)) {
 				isAvailable = true;
+				System.out.println("select options");
+				System.out.println("\n1.First Name\n2.Last Name\n3.Address\n4.City\n5.State\n6.Zip\n7.Phone Number\n8.EmailId");
+			    int option = sc.nextInt();
+			    switch(option){
+				case 1:
 				System.out.println("Enter the First Name : ");
 				contact.setFirstName(sc.next());
+				break;
+				case 2:
 				System.out.println("Enter the Last Name : ");
 				contact.setLastName(sc.next());
+				break;
+				case 3:
 				System.out.println("Enter the Address : ");
 				contact.setAddress(sc.next());
+				break;
+				case 4:
 				System.out.println("Enter the City : ");
 				contact.setCity(sc.next());
+				break;
+				case 5:
 				System.out.println("Enter the State : ");
 				contact.setState(sc.next());
+				break;
+				case 6:
 				System.out.println("Enter the Zipcode : ");
 				contact.setZip(sc.next());
+				break;
+				case 7:
 				System.out.println("Enter the Mobile Number : ");
 				contact.setPhoneNum(sc.next());
+				break;
+				case 8:
 				System.out.println("Enter the Email Id : ");
 				contact.setEmail(sc.next());
+				break;
+				default:
+					System.out.println("enter valid contact");
+				}
+				
+				System.out.println("Contact Updated");
 			}
 		}
 		if(isAvailable == false) {
