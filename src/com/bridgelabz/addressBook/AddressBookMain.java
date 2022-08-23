@@ -12,10 +12,7 @@ public class AddressBookMain {
 		welcome();
 		
 		AddressBook addressBook = new AddressBook(); // object of class AddressBook
-	/*
-	 * using do - while loop for printing all the options 
-	 * */
-		
+	
 		do {
 			System.out.println("***ADDRESSBOOK SIMULATION***");
 
