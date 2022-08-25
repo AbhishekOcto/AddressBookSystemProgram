@@ -16,7 +16,7 @@ public class AddressBookMain {
 		do {
 			System.out.println("***ADDRESSBOOK SIMULATION***");
 
-			System.out.println("\n1. ADD CONTACT \n2. DISPLAY CONTACT \n3. EDIT CONTACT \n4. DELETE A CONTACT \n5.EXIT ");
+			System.out.println("\n1. ADD CONTACT \n2. DISPLAY CONTACT \n3. EDIT CONTACT \n4. EXIT ");
 
 			System.out.println("Enter the Operation Number: ");
 			operationNo = sc.nextInt();
@@ -31,9 +31,9 @@ public class AddressBookMain {
 			case 3:
 				addressBook.editContact();
 				break;
+			
 			case 4:
-				addressBook.deleteContact();
-				break;
+				System.exit(0);
 			default:
 				System.out.println("Invalid entry");
 				break;
