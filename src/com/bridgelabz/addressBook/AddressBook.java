@@ -102,13 +102,6 @@ public class AddressBook {
 				contactList.remove(contact);
 				System.out.println("Contact is Deleted ");
 				break;
-			}
-		}
-		if(isAvailable == false) {
-			System.out.println("Contact Not Available.");
-			
-		}	
-	}
 
 	public void displayContact() { //method for displaying all entries in the ArrayList	
 
