@@ -34,13 +34,16 @@ public class AddressBookMain {
 			case 4:
 				addressBook.deleteContact();
 				break;
+			case 5:
+				System.exit(0);
+				break;
 			default:
 				System.out.println("Invalid entry");
 				break;
 			}
 
 		} 
-		    while (operationNo != 5);
+		    while (operationNo != 6);
             sc.close(); //closing the Scanner
 	
 	}
