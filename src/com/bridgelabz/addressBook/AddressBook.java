@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class AddressBook {
 	Scanner sc = new Scanner(System.in);
 	static ArrayList<Contacts> contactList = new ArrayList<>();	
+	int count = 0;
 	
 	public void addContact() {  //method for adding contact from user input
 		Contacts contact = new Contacts();
 		System.out.println("HashCode of contact: " +hashCode());
+		count++;
 		System.out.println("Enter the First Name : ");
 		contact.setFirstName(sc.next());
 		System.out.println("Enter the Last Name : ");
@@ -101,6 +103,7 @@ public class AddressBook {
 				isAvailable = true;
 				contactList.remove(contact);
 				System.out.println("Contact is Deleted ");
+				count--;
 				break;
 			}
 		}
@@ -116,6 +119,8 @@ public class AddressBook {
 			Contacts contact = contactList.get(i);
 			System.out.println(contact.toString());
 			}
-
 		}
+	public void numOfContacts() {
+		System.out.println("The Contacts Saved in Book : "+count);
+	    }
 	}
