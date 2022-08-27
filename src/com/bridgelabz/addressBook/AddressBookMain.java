@@ -42,15 +42,17 @@ public class AddressBookMain {
 				addressBook.deleteContact();
 				break;
 			case 5:
+
 				addressBook.numOfContacts();
 				break;
 			case 6:
+
 				System.exit(0);
 				break;
 			default:
 				System.out.println("Invalid entry");
 			}
-		}
+
 	
 	}
 	
