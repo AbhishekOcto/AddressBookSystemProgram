@@ -103,8 +103,9 @@ public class AddressBook {
 				isAvailable = true;
 				contactList.remove(contact);
 				System.out.println("Contact is Deleted ");
+
 				count--;
-				break;
+				
 			}
 		}
 		if(isAvailable == false) {
@@ -112,6 +113,7 @@ public class AddressBook {
 			
 		}	
 	}
+
 
 	public void displayContact() { //method for displaying all entries in the ArrayList	
 
