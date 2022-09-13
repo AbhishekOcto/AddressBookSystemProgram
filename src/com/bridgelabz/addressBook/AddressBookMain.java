@@ -1,57 +1,81 @@
 package com.bridgelabz.addressBook;
 import java.util.Scanner;
-
-/*UC5
+import java.util.HashMap;
+/*UC6
  * @author - Abhishek Kumar
- * since - 26.08.2022
+ * since - 12.09.2022
  * */
 
 public class AddressBookMain {
 	
-	public static void welcome() {
-		System.out.println("*****Welcome to Address Book Program*****");
-	}
-
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int operationNo;
+		//UC6 Multiple AddressBooks
+	    HashMap<String,AddressBook> bookMap = new HashMap<String, AddressBook>();
+	    Scanner sc = new Scanner(System.in);
+	    AddressBook adressbook = new AddressBook();
+	    public void multipleAddressBooks(){
+	        while(true){
+	            System.out.println("Please Enter 1. Access Address Book 2.Print  0.Exit");
+	            int choice = sc.nextInt();
+	            switch (choice){
+	                case 1:
+	                    System.out.println("Please Enter AdressBook Name: ");
+	                    String name = sc.next();
+	                    if (bookMap.containsKey(name)){
+	                        System.out.println("Already Present");
+	                    }
+	                    else{
+	                        System.out.println("**Welcome to AddressBook**"+name);
+	                        bookMap.put(name,adressbook);
+	                        menu();
+	                    }
+	                    break;
+	                case 2:
+	                    System.out.println("Please Enter AdressBook Name: ");
+	                    String search = sc.next();
+	                    bookMap.get(search);
+	                    break;
+	                case 0:
+	                    System.out.println("Exit");
+	                    System.exit(0);
+	            }
+	        }
+	    }
+	    
 		
-		welcome();
-		
-		AddressBook addressBook = new AddressBook(); // object of class AddressBook
-	
-		while (true) {
-			System.out.println("***ADDRESSBOOK SIMULATION***");
+	    public static void menu() {
+	    	System.out.println("Welcome to Address Book Program");
+	    	AddressBook addressBook = new AddressBook(); // object of class AddressBook
+	    	Scanner sc = new Scanner(System.in);
+	    	while (true) {
+	    		System.out.println("***ADDRESSBOOK SIMULATION***");
 
-			System.out.println("\n1. ADD CONTACT \n2. DISPLAY CONTACT \n3. EDIT CONTACT \n4. DELETE CONTACT \n5. TOTAL CONTACTS \n6. EXIT ");
+	    		System.out.println("\n1. ADD CONTACT \n2. DISPLAY CONTACT \n3. EDIT CONTACT \n4. DELETE CONTACT \n5. TOTAL CONTACTS \n6. EXIT ");
 
-			System.out.println("Enter the Operation Number: ");
-			operationNo = sc.nextInt();
+	    		System.out.println("Enter the Operation Number: ");
+	    		int operationNo = sc.nextInt();
 			
-			switch (operationNo) {
-			case 1:
-				addressBook.addContact(); 
-				break;
-			case 2:
-				addressBook.displayContact();
-				break;
-			case 3:
-				addressBook.editContact();
-				break;
-			case 4:
-				addressBook.deleteContact();
-				break;
-			case 5:
-				addressBook.numOfContacts();
-				break;
-			case 6:
-				System.exit(0);
-				break;
-			default:
-				System.out.println("Invalid entry");
-			}
-		}
+	    		switch (operationNo) {
+	    			case 1:
+	    				addressBook.addContact(); 
+	    				break;
+	    			case 2:
+	    				addressBook.displayContact();
+	    				break;
+	    			case 3:
+	    				addressBook.editContact();
+	    				break;
+	    			case 4:
+	    				addressBook.deleteContact();
+	    				break;
+	    			case 5:
+	    				addressBook.numOfContacts();
+	    				break;
+	    			case 6:
+	    				return;
+	    			
+	    		}
+	    	}
 	
-	}
+	    }
 	
 }
